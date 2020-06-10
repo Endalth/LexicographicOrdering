@@ -7,7 +7,7 @@ namespace LexicographicOrdering
     {
         static void Main(string[] args)
         {
-            int[] array = new int[] { 1, 2, 3};
+            int[] array = new int[] { 1, 2, 3 };
 
             Console.WriteLine(string.Join(", ", array));
             LexicographicOrder(array);
@@ -17,10 +17,10 @@ namespace LexicographicOrdering
 
         static void LexicographicOrder(int[] array)
         {
-            while(true)
+            while (true)
             {
                 int xIndex = -1;
-                for (int i = 0; i < array.Length -1; i++)
+                for (int i = 0; i < array.Length - 1; i++)
                 {
                     if (array[i] < array[i + 1])
                         xIndex = i;
@@ -40,11 +40,11 @@ namespace LexicographicOrdering
                 array[xIndex] = array[yIndex];
                 array[yIndex] = temp;
 
-                int[] tempArray = array[(xIndex+1)..];
+                int[] tempArray = array[(xIndex + 1)..];
                 tempArray = tempArray.Reverse().ToArray();
 
                 tempArray.CopyTo(array, xIndex + 1);
-                
+
 
                 Console.WriteLine(string.Join(", ", array));
             }
